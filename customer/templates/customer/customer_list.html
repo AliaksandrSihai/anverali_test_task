@@ -1,0 +1,42 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+
+  <div class="col-6">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                         <a class="me-5 py-4 link-body-emphasis text-decoration-none" href="{% url 'customers:add_customer' %}" style="font-size: 20px;">Добавить нового заказчика</a>
+                    </div>
+                </div>
+            </div>
+    <div class="col-12">
+        <h2> Заказчики: </h2>
+    </div>
+{% for customer in object_list %}
+    <div class="col-12">
+        <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg">
+            <div class="card-header">
+                <ul class="nav-item ml-auto">
+                    <li >
+                        <h3>{{ customer.name }} {{ customer.surname }}</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>
+                        <h4>Телефон: {{ customer.phone }}</h4>
+                        <h4>Почта: {{ customer.email }}</h4>
+                        <h4>Опыт: {{ customer.experience }}</h4>
+                    </li>
+                </ul>
+
+            </div>
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                    <a href="{% url 'customers:customer_details' customer.pk %}" type="button" class="btn btn-secondary">Перейти</a>
+                    <a href="{% url 'customers:customer_update' customer.pk %}" type="button" class="btn btn-secondary">Изменить</a>
+                    <a href="{% url 'customers:delete_customer' customer.pk %}" type="button" class="btn btn-secondary">Удалить</a>
+                </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
