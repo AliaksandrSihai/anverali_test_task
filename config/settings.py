@@ -135,3 +135,12 @@ STATICFILES_DIRS = (BASE_DIR / "static",)
 AUTH_USER_MODEL = "users.User"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+#Для создания админ пользователя
+User_admin_email = os.getenv('User_admin_email')
+User_admin_first_name = os.getenv('User_admin_first_name')
+User_admin_last_name = os.getenv('User_admin_last_name')
+User_admin_is_staff = os.getenv('User_admin_is_staff')
+User_admin_is_superuser = os.getenv('User_admin_is_superuser')
+User_admin_password = os.getenv('User_admin_password')
+
