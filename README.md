@@ -15,8 +15,9 @@
 - `git clone https://github.com/AliaksandrSihai/anverali_test_task`
 - создать базу данных и файл .env(образец необходимых зависимостей находятся в .env_sample) и добавить необходимые переменные
 - `python -m venv venv && source venv/bin/activate && pip install -r requirements.txt`
-- `python manage.py migrate `
+- `python manage.py makemigrations && python manage.py migrate `
 - Для создания админ-пользователя выполнить команду  `python manage.py csu`
+- `python manage.py runserver`
 ---
 **Стек**:
 - Python
