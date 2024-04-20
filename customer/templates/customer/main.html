@@ -7,15 +7,29 @@
     </div>
             <div class="col-6">
                 <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card py-5">
-                         <a class="me-5 py-4 link-body-emphasis text-decoration-none" href="{% url 'customers:all_customers' %}" style="font-size: 30px;">Заказчики</a>
+                    <div class="card-header py-5">
+                         <a class="me-5 py-4 link-body-emphasis text-decoration-none" href="{% url 'customers:all_customers' %}" style="font-size: 30px;">Заказчики:</a>
+                    </div>
+                    <div class="'card-body">
+                        {% for customer in context_customer %}
+                          <div>
+                            <h4 class="my-0 fw-normal">- {{ customer.name }} {{ customer.surname }}</h4>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
             <div class="col-6">
                 <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card py-5">
-                         <a class="me-5 py-4 link-body-emphasis text-decoration-none" href="#" style="font-size: 30px;">Исполнители</a>
+                    <div class="card-header  py-5">
+                         <a class="me-5 py-4 link-body-emphasis text-decoration-none" href="{% url 'performers:all_performers' %}" style="font-size: 30px;">Исполнители:</a>
+                    </div>
+                     <div class="'card-body">
+                        {% for performer in context_performer %}
+                          <div>
+                            <h4 class="my-0 fw-normal">- {{ performer.name }} {{ performer.surname }}</h4>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
